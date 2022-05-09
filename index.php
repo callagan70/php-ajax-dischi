@@ -1,9 +1,7 @@
 <?php
-include  __DIR__ 'database.php';
 
-
-
-
+include  __DIR__ . './data/database.php'
+// include './data/database.php'
 ?>
 
 
@@ -29,12 +27,32 @@ Attraverso l’utilizzo di axios: al caricamento della pagina axios chiederà, a
 Bonus:
 Attraverso un’altra chiamata api, filtrare gli album per genere -->
 
+<div id="app">
+    
+<?php
+
+foreach ($database as $disk){
+    echo '<div class="display">';
+        echo '<div class="cards">';
+            // echo '<img src=" ' . $poster . ' " /> ' ;
+            echo "<h2>" . $disk['title'] . "</h2>";
+            echo "<p>" . $disk['author'] .  "</p>";
+        echo "</div>";
+    echo "</div>";
+};
+
+?>
 
 
 
 
-<script src="./file/main.js></script>
+</div>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./file/main.js"></script>
 </body>
 </html>
